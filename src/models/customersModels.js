@@ -3,8 +3,10 @@ const { DataTypes } = require('sequelize');
 
 const customers = sequelize.define('customers', {
     customerNumber: {
-        type: DataTypes.INTEGER(11),
+        type: DataTypes.INTEGER,
         allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
     },
     customerName: {
         type: DataTypes.STRING(50),
@@ -40,7 +42,23 @@ const customers = sequelize.define('customers', {
     },
     postalCode: {
         type: DataTypes.STRING(15),
+        allowNull: true,
+    },
+    country: {
+        type: DataTypes.STRING(50),
         allowNull: false,
     },
-    
+    salesRepEmployeeNumber: {
+        type: DataTypes.INTEGER(11),
+        allowNull: true,
+    },
+    creditLimit: {
+        type: DataTypes.DECIMAL(10,2),
+        allowNull: true,
+    }, 
+}, {
+    tableName: 'customers',
+    timestamps: false,
 });
+
+module.exports = customers;

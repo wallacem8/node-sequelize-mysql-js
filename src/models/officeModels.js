@@ -3,9 +3,10 @@ const { DataTypes } = require('sequelize');
 
 const officeModels = sequelize.define('offices', {
     officeCode: {
-        type: DataTypes.STRING(10),
+        type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
+        autoIncrement: true,
     },
     city: {
         type: DataTypes.STRING(50),

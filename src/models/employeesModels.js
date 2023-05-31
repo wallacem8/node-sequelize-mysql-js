@@ -3,9 +3,10 @@ const { DataTypes } = require('sequelize');
 
 const employeesModels = sequelize.define('employees', {
     employeeNumber: {
-        type: DataTypes.INTEGER(11),
+        type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
+        autoIncrement: true,
     },
     lastName: {
         type: DataTypes.STRING(50),

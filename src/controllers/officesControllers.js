@@ -17,7 +17,7 @@ exports.createOffice = async (req, res) => {
 
 exports.updateOffice = async (req, res) => {
     const office = await officesRepository.updateOffice(req.params.officeCode);
-    res.json(office);
+    res.json(`${office}`);
 }
 
 exports.deleteOffice = async (req, res) => {
